@@ -127,7 +127,12 @@ class Tasker extends Component
         }
 
         // Tasks Next Week
-        $nextWeek = $now->copy()->addWeek();
+        if($now->dayOfWeek() == 6)
+        {
+            $nextWeek = $now->copy()->subDay()->addWeek();
+        } else {
+            $nextWeek = $now->copy()->addWeek();
+        }
         $this->tasksNextWeek = Task::where('status', 'pending')->whereMonth('event', $nextWeek->startOfWeek()->month)->whereBetween('event', [$nextWeek->startOfWeek()->toDateString(), $nextWeek->endOfWeek()->toDateString()])->orderBy('event', 'asc')->get();
 
         // Tasks in the near future.
