@@ -5,6 +5,7 @@
             Users
         </h1>
         
+        @if(Auth::user()->current_team_id === 100)
 
         <table class="table-fixed w-full text-sm text-left text-slate-900 content-center">
             <thead>
@@ -34,6 +35,10 @@
                 @endforeach
             </tbody>
         </table>
+
+        @else
+        <p class="text-sm mt-2 text-gray-600">You are not verified yet.</p>
+        @endif
 
     </div>
 
