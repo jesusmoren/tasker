@@ -127,7 +127,7 @@ class Tasker extends Component
         }
 
         // Tasks Next Week
-        if($now->dayOfWeek() == 6)
+        if($now->dayOfWeek == 6)
         {
             $nextWeek = $now->copy()->subDay()->addWeek();
         } else {
