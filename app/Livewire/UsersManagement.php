@@ -27,7 +27,7 @@ class UsersManagement extends Component
 
     public function verify($userId)
     {
-        User::where('id', $userId)->update(['email_verified_at' => Carbon::now()->toDateTimeString(), 'current_team_id' => 1]);
+        User::where('id', $userId)->update(['email_verified_at' => Carbon::now()->toDateTimeString(), 'current_team_id' => 100]);
         $this->getUsers();
     }
 }
