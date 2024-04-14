@@ -175,7 +175,7 @@
                 </tbody>
             </table>
     
-            <p class="font-bold mt-6">Next Week</p>
+            <p class="font-bold mt-6">Next Weeks (this month)</p>
             <table class="w-full text-sm text-left text-slate-900 table-fixed">
                 <tbody>
                     @forelse($tasksNextWeek as $taskNextWeek)
