@@ -186,6 +186,7 @@ class Tasker extends Component
 
                                 if($date->betweenIncluded(Carbon::createFromFormat('Y-m-d', $this->rangeFrom), Carbon::createFromFormat('Y-m-d', $this->rangeAt)))
                                 {
+                                    if(empty($this->groupId)) $this->groupId = null;
                                     $task = Task::create([
                                         'user_id' => Auth::user()->id,
                                         'group_id' => $this->groupId,
@@ -203,6 +204,7 @@ class Tasker extends Component
     
                                 if($countIterations < $this->iterations && $date->greaterThanOrEqualTo(Carbon::now()->startOfDay()))
                                 {
+                                    if(empty($this->groupId)) $this->groupId = null;
                                     $task = Task::create([
                                         'user_id' => Auth::user()->id,
                                         'group_id' => $this->groupId,
